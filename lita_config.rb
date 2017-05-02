@@ -1,7 +1,7 @@
 require 'dotenv/load'
 require './handlers/aqi.rb'
 require './handlers/weather.rb'
-require './handlers/cleverbot.rb'
+require './handlers/cleverhandler.rb'
 
 Lita.configure do |config|
   # The name your robot will use.
@@ -28,10 +28,7 @@ Lita.configure do |config|
   ## documentation for options.
   # config.handlers.karma.cooldown = 300.
   # config.handlers.some_handler.some_config_key = 'value'
-  # config.handlers.ai.api_user = "ENV['CLEVERBOTIO_API_USER']"
-  # config.handlers.ai.api_key = "ENV['CLEVERBOTIO_API_KEY']"
-  # config.handlers.cleverbot.api_user = ENV['CLEVERBOTIO_API_USER']
-  # config.handlers.cleverbot.api_key = ENV['CLEVERBOTIO_API_KEY']
+  $cleverbot = Cleverbot.new('CC1z5h_EyiKuIIynaD3JxTGahAA')
 
   # config.robot.adapter = :chatwork
   # config.adapters.chatwork.api_key = ENV['CHATWORK_API_KEY']
