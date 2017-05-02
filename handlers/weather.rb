@@ -13,11 +13,13 @@ module Lita
 
         keyword = response.args.join(' ')
 
-        http_response = http.get "http://api.openweathermap.org/data/2.5/weather?q=#{keyword}&units=metric&appid=7b53401353d18be77d136c18e829e235"
+        http_response = http.get "http://api.openweathermap.org/data/2.5/weather?q=#{keyword}&units=metric&appid=#{ENV['OPENWEATHER_APPID']}"
         parsed_json = MultiJson.load http_response.body
-        # response.reply parsed_json['main']['temp'].to_s
-
-        response.reply "Current temp: #{parsed_json['main']['temp']}, #{parsed_json['weather'][0]['main']}\nHumidity: #{parsed_json['main']['humidity']}\nWind speed: #{parsed_json['wind']['speed']} m/s\n"
+        if parsed_json['cod'] != 200
+          response.reply "Could find location.\nenter location after weather. Ex: weather ulaanbaatar"
+        else
+          response.reply "Current temp: #{parsed_json['main']['temp']}, #{parsed_json['weather'][0]['main']}\nHumidity: #{parsed_json['main']['humidity']}\nWind speed: #{parsed_json['wind']['speed']} m/s\n"
+        end
       end
 
       Lita.register_handler(self)

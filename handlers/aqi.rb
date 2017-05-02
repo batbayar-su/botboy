@@ -15,10 +15,14 @@ module Lita
 
         keyword = response.args.join(' ')
 
-        http_response = http.get "http://api.waqi.info/search/?keyword=#{keyword}&token=634857793591a20ec396a490ec6cc001ffde8cee"
+        http_response = http.get "http://api.waqi.info/search/?keyword=#{keyword}&token=#{ENV['WAQI_TOKEN']}"
         parsed_json = MultiJson.load http_response.body
-
-        response.reply "Current AQI: #{parsed_json['data'][0]['aqi']}"
+        # raise parsed_json.to_s
+        if parsed_json['data'].empty?
+          response.reply "Could find location.\nSensors in UB: 100 ail, baruun 4 zam, bukhiin urguu, M.N.B, Ulaanbaatar Us Embassy, misheel expo, mongol gazar, urgakh naran, nisekh"
+        else
+          response.reply "Current AQI: #{parsed_json['data'][0]['aqi']}"
+        end
       end
 
       Lita.register_handler(self)
