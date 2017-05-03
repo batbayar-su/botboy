@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/5fpro/lita-aws.git
+  revision: 2a153228e8cdb8f4c93a2bc212ed530fcefda063
+  specs:
+    lita-aws (0.1.2)
+      lita (>= 4.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -28,8 +35,13 @@ GEM
       dotenv (= 2.2.1)
       railties (>= 3.2, < 5.2)
     erubis (2.7.0)
+    eventmachine (1.2.3)
+    eventmachine (1.2.3-x86-mingw32)
     faraday (0.12.0.1)
       multipart-post (>= 1.2, < 3)
+    faye-websocket (0.10.7)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.5.1)
     ffi (1.9.18-x86-mingw32)
     hashie (1.2.0)
     http-cookie (1.0.3)
@@ -60,11 +72,14 @@ GEM
       lita (>= 4.0.0)
     lita-bitly (0.0.2)
       lita (>= 3.3)
-    lita-chm (0.0.2)
-      lita (>= 4.3)
-      nokogiri
-    lita-chuck_norris (0.0.1)
-      lita (>= 3.0)
+    lita-isolita (0.1.20)
+      lita (>= 4.4)
+    lita-slack (1.8.0)
+      eventmachine
+      faraday
+      faye-websocket (>= 0.8.0)
+      lita (>= 4.7.1)
+      multi_json
     lita-whois (1.1.0)
       lita (~> 4.2)
       whois
@@ -130,6 +145,9 @@ GEM
     url_shortener (0.0.9)
       hashie (~> 1.2.0)
       httparty (~> 0.13.7)
+    websocket-driver (0.6.5)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
     whois (4.0.1)
 
 PLATFORMS
@@ -140,9 +158,10 @@ DEPENDENCIES
   dotenv-rails
   lita
   lita-ascii-art
+  lita-aws!
   lita-bitly
-  lita-chm
-  lita-chuck_norris
+  lita-isolita
+  lita-slack
   lita-whois
   open-weather
   rest-client

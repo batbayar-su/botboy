@@ -2,7 +2,7 @@ module Lita
   module Handlers
     # Air Quality Index
     class Aqi < Handler
-      route(/aqi(.*)/i, :aqi, command: true,
+      route(/aqi(.*)/i, :aqi, command: false,
                               help: { 'aqi <address>' => "enter search word just after aqi.\nEx: aqi 4 zam
                                       \nSensors in UB: 100 ail, baruun 4 zam, bukhiin urguu, M.N.B, Ulaanbaatar Us Embassy, misheel expo, mongol gazar, urgakh naran, nisekh" })
 

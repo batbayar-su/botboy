@@ -2,7 +2,7 @@ module Lita
   module Handlers
     # Yahoo Weather
     class Weather < Handler
-      route(/weather(.*)/i, :weather, command: true,
+      route(/weather(.*)/i, :weather, command: false,
                                       help: { 'weather <location>' => 'enter location after weather. Ex: weather ulaanbaatar' })
 
       def weather(response)
