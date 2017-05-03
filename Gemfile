@@ -6,18 +6,15 @@ gem 'lita'
 gem 'lita-slack'
 
 # Add handlers to give Lita new functionality.
-# For example:
-# gem 'lita-google-images'
-# gem 'lita-karma'
-gem 'lita-whois'
 gem 'lita-ascii-art'
-gem 'url_shortener' # used for bitly
+gem 'lita-aws', :git => 'git://github.com/5fpro/lita-aws.git'
 gem 'lita-bitly'
 gem 'lita-isolita'
-gem 'lita-aws', :git => 'git://github.com/5fpro/lita-aws.git'
+gem 'lita-whois'
 
 # Custom libraries
-gem 'open-weather'
-gem 'rest-client' # used for cleverbot
-gem 'ruby-cleverbot-api'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', groups: [:development, :test] # used for environment variables
+gem 'open-weather' # used for weather handler
+gem 'rest-client' # used for clever handler
+gem 'ruby-cleverbot-api' # used for clever handler
+gem 'url_shortener' # used for bitly
