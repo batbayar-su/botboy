@@ -15,7 +15,7 @@ module Lita
         robot.send_message(message.source, message_response)
       end
 
-      Lita.register_handler(self)
+      Lita.register_handler(CleverHandler)
     end
   end
 end

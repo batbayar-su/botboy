@@ -22,7 +22,7 @@ module Lita
         end
       end
 
-      Lita.register_handler(self)
+      Lita.register_handler(Weather)
     end
   end
 end

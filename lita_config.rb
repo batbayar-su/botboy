@@ -1,7 +1,11 @@
 require 'dotenv/load'
-require './handlers/aqi.rb'
+require './handlers/air_quality.rb'
+require './handlers/ascii_art.rb'
+require './handlers/bitly.rb'
+require './handlers/cleverhandler.rb'
+require './handlers/fuck_detector.rb'
 require './handlers/weather.rb'
-# require './handlers/cleverhandler.rb'
+require './handlers/whois.rb'
 
 Lita.configure do |config|
   # The name your robot will use.
@@ -11,14 +15,14 @@ Lita.configure do |config|
   config.robot.log_level = :info
 
   # Slack
-  config.robot.adapter = :slack
-  config.robot.admins = ['U377TK9U7']
-  config.adapters.slack.token = ENV['SLACK_TOKEN']
+  # config.robot.adapter = :slack
+  # config.robot.admins = ['U377TK9U7']
+  # config.adapters.slack.token = ENV['SLACK_TOKEN']
 
-  config.adapters.slack.link_names = true
-  config.adapters.slack.parse = 'full'
-  config.adapters.slack.unfurl_links = false
-  config.adapters.slack.unfurl_media = false
+  # config.adapters.slack.link_names = true
+  # config.adapters.slack.parse = 'full'
+  # config.adapters.slack.unfurl_links = false
+  # config.adapters.slack.unfurl_media = false
 
   ## Example: Set options for the Redis connection.
   config.redis.host = '127.0.0.1'
