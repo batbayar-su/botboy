@@ -14,3 +14,5 @@ Metrics/CyclomaticComplexity:
   Max: 10
 Documentation:
   Enabled: false
+FileName:
+  Enabled: false
